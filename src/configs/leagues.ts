@@ -15,8 +15,8 @@ export const BUNDESLIGA: Team[] = [
   { name: '1. FSV Mainz 05', keywords: ['mainz'] },
   { name: 'FC Augsburg', keywords: ['augsburg'] },
   { name: 'Hertha Berlin', keywords: ['hertha'] },
-  { name: 'Arminia Bielefeld', keywords: ['bielefeld'] },
-  { name: '1. FC Köln', keywords: ['koln'] },
+  { name: 'Arminia Bielefeld', keywords: ['bielefeld', 'arminia'] },
+  { name: '1. FC Köln', keywords: ['koln', 'koeln'] },
   { name: 'VfL Bochum 1848', keywords: ['bochum'] },
   { name: 'SpVgg Greuther Fürth', keywords: ['greuther', 'furth'] },
 ];
@@ -33,7 +33,10 @@ export const PREMIER_LEAGUE: Team[] = [
   { name: 'Leeds United', keywords: ['leeds united', 'leeds'] },
   { name: 'Leicester City', keywords: ['leicester city', 'leicester'] },
   { name: 'Liverpool', keywords: ['liverpool'] },
-  { name: 'Manchester City', keywords: ['manchester city', ['manch', 'city']] },
+  {
+    name: 'Manchester City',
+    keywords: ['manchester city', ['manch', 'city'], ['man', 'city']],
+  },
   {
     name: 'Manchester United',
     keywords: ['manchester united', ['man', 'utd']],
@@ -62,7 +65,10 @@ export const JUPILER_PRO: Team[] = [
   { name: 'KV Oostende', keywords: ['kv oostende', 'oostende'] },
   { name: 'OH Leuven', keywords: ['oh leuven', 'heverlee'] },
   { name: 'RFC Seraing', keywords: ['rfc seraing', 'seraing'] },
-  { name: 'Royal Antwerp FC', keywords: ['royal antwerp fc', 'antwerpia', 'antwerp'] },
+  {
+    name: 'Royal Antwerp FC',
+    keywords: ['royal antwerp fc', 'antwerpia', 'antwerp'],
+  },
   {
     name: 'Royale Union Saint-Gilloise',
     keywords: ['royale union saint-gilloise', 'gilloise'],
@@ -72,4 +78,48 @@ export const JUPILER_PRO: Team[] = [
   { name: 'Standard de Liège', keywords: ['standard de liège', 'liege'] },
   { name: 'STVV', keywords: ['stvv', 'truiden'] },
   { name: 'SV Zulte Waregem', keywords: ['sv zulte waregem', 'waregem'] },
+];
+
+export const LIGUE_1: Team[] = [
+  { name: 'ANGERS SCO', keywords: ['angers sco', 'angers'] },
+  { name: 'AS MONACO', keywords: ['as monaco', 'monaco'] },
+  { name: 'AS SAINT-ÉTIENNE', keywords: ['as saint-étienne', 'etienne'] },
+  { name: 'CLERMONT FOOT 63', keywords: ['clermont foot 63', 'clermont'] },
+  { name: 'ESTAC TROYES', keywords: ['estac troyes', 'troyes', 'estac'] },
+  {
+    name: 'FC GIRONDINS DE BORDEAUX',
+    keywords: ['fc girondins de bordeaux', 'bordeaux'],
+  },
+  { name: 'FC LORIENT', keywords: ['fc lorient', 'lorient'] },
+  { name: 'FC METZ', keywords: ['fc metz', 'metz'] },
+  { name: 'FC NANTES', keywords: ['fc nantes', 'nantes'] },
+  { name: 'LOSC LILLE', keywords: ['losc lille', 'lille'] },
+  {
+    name: 'MONTPELLIER HÉRAULT SC',
+    keywords: ['montpellier hérault sc', 'montpellier'],
+  },
+  { name: 'OGC NICE', keywords: ['ogc nice', 'nice'] },
+  {
+    name: 'OLYMPIQUE DE MARSEILLE',
+    keywords: ['olympique de marseille', 'marseille', 'marsylia'],
+  },
+  {
+    name: 'OLYMPIQUE LYONNAIS',
+    keywords: ['olympique lyonnais', 'lyonnais', 'lyon'],
+  },
+  {
+    name: 'PARIS SAINT-GERMAIN',
+    keywords: ['paris saint-germain', 'paris', 'psg'],
+  },
+  { name: 'RC LENS', keywords: ['rc lens', 'lens'] },
+  {
+    name: 'RC STRASBOURG ALSACE',
+    keywords: ['rc strasbourg alsace', 'alsace', 'strasbourg'],
+  },
+  {
+    name: 'STADE BRESTOIS 29',
+    keywords: ['stade brestois 29', 'brestois', 'brest'],
+  },
+  { name: 'STADE DE REIMS', keywords: ['stade de reims', 'reims'] },
+  { name: 'STADE RENNAIS FC', keywords: ['stade rennais fc', 'rennais'] },
 ];

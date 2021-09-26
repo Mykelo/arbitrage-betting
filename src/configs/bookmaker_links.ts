@@ -13,6 +13,10 @@ export const betfan: League[] = [
     name: 'jupilerPro',
     url: 'https://betfan.pl/zaklady-bukmacherskie/pilka-nozna/belgia/1-belgia/228',
   },
+  {
+    name: 'ligue1',
+    url: 'https://betfan.pl/zaklady-bukmacherskie/pilka-nozna/francja/ligue-1/214',
+  },
 ];
 
 export const betcris: League[] = [
@@ -27,6 +31,10 @@ export const betcris: League[] = [
   {
     name: 'jupilerPro',
     url: 'https://www.betcris.pl/zaklady-bukmacherskie#/Soccer/Belgium/557/18601898',
+  },
+  {
+    name: 'ligue1',
+    url: 'https://www.betcris.pl/zaklady-bukmacherskie#/Soccer/France/548/18603730',
   },
 ];
 
@@ -43,6 +51,10 @@ export const fortuna: League[] = [
     name: 'jupilerPro',
     url: 'https://www.efortuna.pl/zaklady-bukmacherskie/pilka-nozna/1-belgia',
   },
+  {
+    name: 'ligue1',
+    url: 'https://www.efortuna.pl/zaklady-bukmacherskie/pilka-nozna/1-francja',
+  },
 ];
 
 export const fuksiarz: League[] = [
@@ -57,5 +69,28 @@ export const fuksiarz: League[] = [
   {
     name: 'jupilerPro',
     url: 'https://fuksiarz.pl/zaklady-bukmacherskie/pilka-nozna/belgia/1-liga/1235/1',
+  },
+  {
+    name: 'ligue1',
+    url: 'https://fuksiarz.pl/zaklady-bukmacherskie/pilka-nozna/francja/ligue-1/1152/1',
+  },
+];
+
+export const betclic: League[] = [
+  {
+    name: 'bundesliga',
+    url: 'https://www.betclic.pl/pilka-nozna-s1/bundesliga-c5',
+  },
+  {
+    name: 'premierLeague',
+    url: 'https://www.betclic.pl/pilka-nozna-s1/premier-league-c3',
+  },
+  {
+    name: 'jupilerPro',
+    url: 'https://www.betclic.pl/pilka-nozna-s1/belgia-1-liga-c26',
+  },
+  {
+    name: 'ligue1',
+    url: 'https://www.betclic.pl/pilka-nozna-s1/ligue-1-c4',
   },
 ];

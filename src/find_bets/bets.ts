@@ -12,7 +12,7 @@ export function findProfitableBets(event: SportEvent): BetGroup[] {
           newOdds.splice(k, 1, bookmakerEvent1.odds[k]);
 
           const percentage = newOdds.reduce((prev, curr) => prev + 1 / curr, 0);
-          if (percentage < 1.02) {
+          if (percentage < 1.02 || true) {
             const bets: Bet[] = newOdds.map((odd, index) => {
               const bookmakerEvent =
                 index === k ? bookmakerEvent1 : bookmakerEvent2;

@@ -1,6 +1,7 @@
 import { leagueLinks } from './configs';
 import { findProfitableBets, findSportEvents } from './find_bets';
 import { AbstractBookmakerScraper } from './scrapers/AbstractScraper';
+import { BetclicScraper } from './scrapers/BetclicScraper';
 import { BetcrisScraper } from './scrapers/BetcrisScraper';
 import { BetfanScraper } from './scrapers/BetfanScraper';
 import { FortunaScraper } from './scrapers/FortunaScraper';
@@ -12,6 +13,7 @@ const scrapers: AbstractBookmakerScraper[] = [
   new BetfanScraper(leagueLinks.betfan),
   new FortunaScraper(leagueLinks.fortuna),
   new FuksiarzScraper(leagueLinks.fuksiarz),
+  new BetclicScraper(leagueLinks.betclic),
 ];
 
 async function analyzeBets(scrapers: AbstractBookmakerScraper[]) {

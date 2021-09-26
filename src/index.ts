@@ -79,6 +79,24 @@ const scrapers: ScraperConfig[] = [
       },
     ],
   },
+  {
+    name: 'Fortuna',
+    scraper: new FortunaScraper(),
+    leagues: [
+      {
+        name: 'bundesliga',
+        url: 'https://www.efortuna.pl/zaklady-bukmacherskie/pilka-nozna/1-niemcy',
+      },
+      {
+        name: 'premierLeague',
+        url: 'https://www.efortuna.pl/zaklady-bukmacherskie/pilka-nozna/1-anglia',
+      },
+      {
+        name: 'jupilerPro',
+        url: 'https://www.efortuna.pl/zaklady-bukmacherskie/pilka-nozna/1-belgia',
+      },
+    ],
+  },
 ];
 
 function findSportEvents(scrapes: ScraperConfig[]): SportEvent[] {

@@ -38,7 +38,6 @@ export class BetcrisScraper extends AbstractBookmakerScraper {
         return {
           odds,
           teams: teams.slice(0, 2) as [string, string],
-          date: null,
         };
       });
     });

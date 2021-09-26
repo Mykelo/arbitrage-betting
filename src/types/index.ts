@@ -4,6 +4,7 @@ import {
   BrowserLaunchArgumentOptions,
   LaunchOptions,
 } from 'puppeteer';
+import { LEAGUES, LEAGUE_NAMES } from '../configs';
 
 export interface BookmakerScraperInterface {
   browser: Browser | null;
@@ -16,7 +17,7 @@ export interface BookmakerEvent {
   bookamerName?: string;
   teams: [string, string];
   odds: [number, number, number];
-  date: Date | null;
+  date?: Date;
 }
 
 export type PuppeteerLaunchOptions = LaunchOptions &
@@ -31,7 +32,11 @@ export interface Team {
 export interface ScraperConfig {
   name: string;
   scraper: BookmakerScraperInterface;
-  url: string;
+  leagues: {
+    name: typeof LEAGUE_NAMES[number];
+    url: string;
+    matches?: Team[];
+  }[];
 }
 
 export interface SportEvent {

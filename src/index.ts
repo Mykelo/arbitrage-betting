@@ -1,8 +1,10 @@
 import { TeamComparator } from './comparators';
+import { LEAGUES } from './configs';
 import { BUNDESLIGA, JUPILER_PRO, PREMIER_LEAGUE } from './configs/leagues';
 import { findProfitableBets } from './find_bets';
 import { BetcrisScraper } from './scrapers/BetcrisScraper';
 import { BetfanScraper } from './scrapers/BetfanScraper';
+import { FortunaScraper } from './scrapers/FortunaScraper';
 import { BetGroup, ScraperConfig, SportEvent, Team } from './types';
 
 async function scrapeBetfan() {
@@ -29,48 +31,60 @@ async function scrapeBetcris() {
   }
 }
 
-const bundesligaScrapes: ScraperConfig[] = [
+async function scrapeFortuna() {
+  const fortunaScraper = new FortunaScraper();
+  try {
+    await fortunaScraper.scrapeMatches(
+      'https://www.efortuna.pl/zaklady-bukmacherskie/pilka-nozna/1-anglia'
+    );
+    console.log(fortunaScraper.matches);
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+const scrapers: ScraperConfig[] = [
   {
     name: 'Betfan',
     scraper: new BetfanScraper(),
-    url: 'https://betfan.pl/zaklady-bukmacherskie/pilka-nozna/niemcy/bundesliga/264',
+    leagues: [
+      {
+        name: 'bundesliga',
+        url: 'https://betfan.pl/zaklady-bukmacherskie/pilka-nozna/niemcy/bundesliga/264',
+      },
+      {
+        name: 'premierLeague',
+        url: 'https://betfan.pl/zaklady-bukmacherskie/pilka-nozna/anglia/premier-league/244',
+      },
+      {
+        name: 'jupilerPro',
+        url: 'https://betfan.pl/zaklady-bukmacherskie/pilka-nozna/belgia/1-belgia/228',
+      },
+    ],
   },
   {
     name: 'Betcris',
     scraper: new BetcrisScraper(),
-    url: 'https://www.betcris.pl/zaklady-bukmacherskie#/Soccer/Germany/541/18601898',
+    leagues: [
+      {
+        name: 'bundesliga',
+        url: 'https://www.betcris.pl/zaklady-bukmacherskie#/Soccer/Germany/541/18601898',
+      },
+      {
+        name: 'premierLeague',
+        url: 'https://www.betcris.pl/zaklady-bukmacherskie#/Soccer/England/538/18601898',
+      },
+      {
+        name: 'jupilerPro',
+        url: 'https://www.betcris.pl/zaklady-bukmacherskie#/Soccer/Belgium/557/18601898',
+      },
+    ],
   },
 ];
 
-const premierLeagueScrapes: ScraperConfig[] = [
-  {
-    name: 'Betfan',
-    scraper: new BetfanScraper(),
-    url: 'https://betfan.pl/zaklady-bukmacherskie/pilka-nozna/anglia/premier-league/244',
-  },
-  {
-    name: 'Betcris',
-    scraper: new BetcrisScraper(),
-    url: 'https://www.betcris.pl/zaklady-bukmacherskie#/Soccer/England/538/18601898',
-  },
-];
 
-const jupilerProScrapes: ScraperConfig[] = [
-  {
-    name: 'Betfan',
-    scraper: new BetfanScraper(),
-    url: 'https://betfan.pl/zaklady-bukmacherskie/pilka-nozna/belgia/1-belgia/228',
-  },
-  {
-    name: 'Betcris',
-    scraper: new BetcrisScraper(),
-    url: 'https://www.betcris.pl/zaklady-bukmacherskie#/Soccer/Belgium/557/18601898',
-  },
-];
-
-async function scrapeFootballLeague(
+async function scrape(
   scrapes: ScraperConfig[],
-  config: Team[]
 ): Promise<SportEvent[]> {
   for (const scrape of scrapes) {
     await scrape.scraper.scrapeMatches(scrape.url);
@@ -129,5 +143,7 @@ async function analyzeBets(scrapes: ScraperConfig[], config: Team[]) {
 }
 
 // analyzeBets(jupilerProScrapes, JUPILER_PRO);
-analyzeBets(premierLeagueScrapes, PREMIER_LEAGUE);
+// analyzeBets(premierLeagueScrapes, PREMIER_LEAGUE);
 // analyzeBets(bundesligaScrapes, BUNDESLIGA);
+
+scrapeFortuna();

@@ -1,9 +1,9 @@
 import { BookmakerScraperInterface, BookmakerEvent, League } from '../types';
 import { AbstractBookmakerScraper } from './AbstractScraper';
 
-export class FortunaScraper extends AbstractBookmakerScraper {
+export class FuksiarzScraper extends AbstractBookmakerScraper {
   constructor(leagues?: League[]) {
-    super('Fortuna', leagues);
+    super('Fuksiarz', leagues);
   }
 
   async scrapeMatches(url: string): Promise<BookmakerEvent[]> {
@@ -15,16 +15,17 @@ export class FortunaScraper extends AbstractBookmakerScraper {
     await page.goto(url, { waitUntil: 'networkidle0' });
 
     const result: BookmakerEvent[] = await page.evaluate(() => {
-      const events = Array.from(document.querySelectorAll('a.event-link'));
+      const events = Array.from(
+        document.querySelectorAll('ul.eventListEventsListPartial')
+      );
       return events.map(event => {
-        const id = event.getAttribute('data-id') || '';
-        const teams = event.nextElementSibling
-          ?.querySelector('span.market-name')
+        const teams = event
+          .querySelector('div.name')
           // @ts-ignore
           ?.innerText.split(' - ');
 
         const oddsCells = Array.from(
-          document.querySelectorAll(`a[data-event-id=${id}]`)
+          event.querySelectorAll('button[outcome-id]')
         );
         // @ts-ignore
         const odds = oddsCells.map(cell => Number(cell.innerText));

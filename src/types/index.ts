@@ -14,9 +14,11 @@ export interface League {
   matches?: BookmakerEvent[];
 }
 export interface BookmakerScraperInterface {
+  name: string;
+  leagues: League[];
   browser: Browser | null;
-  matches: BookmakerEvent[];
-  scrapeMatches(url: string): Promise<void>;
+  scrapeAllLeagues(): Promise<void>;
+  scrapeMatches(url: string): Promise<BookmakerEvent[]>;
   launch(options?: PuppeteerLaunchOptions): Promise<void>;
 }
 

@@ -18,7 +18,7 @@ export const BUNDESLIGA: Team[] = [
   { name: 'Arminia Bielefeld', keywords: ['bielefeld'] },
   { name: '1. FC Köln', keywords: ['koln'] },
   { name: 'VfL Bochum 1848', keywords: ['bochum'] },
-  { name: 'SpVgg Greuther Fürth', keywords: ['greuther'] },
+  { name: 'SpVgg Greuther Fürth', keywords: ['greuther', 'furth'] },
 ];
 
 export const PREMIER_LEAGUE: Team[] = [

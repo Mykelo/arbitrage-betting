@@ -1,19 +1,18 @@
-import { BookmakerScraperInterface, BookmakerEvent } from '../types';
+import { BookmakerScraperInterface, BookmakerEvent, League } from '../types';
 import { AbstractBookmakerScraper } from './AbstractScraper';
 
 export class BetcrisScraper extends AbstractBookmakerScraper {
-  constructor() {
-    super();
+  constructor(leagues?: League[]) {
+    super('Betcris', leagues);
   }
 
-  async scrapeMatches(url: string) {
-    await this.launch();
+  async scrapeMatches(url: string): Promise<BookmakerEvent[]> {
     if (!this.browser) {
       throw new Error('Browser not initialized');
     }
     const page = await this.browser.newPage();
 
-    await page.goto(url);
+    await page.goto(url, { waitUntil: 'networkidle0' });
 
     const result: BookmakerEvent[] = await page.evaluate(() => {
       const events = Array.from(
@@ -42,7 +41,6 @@ export class BetcrisScraper extends AbstractBookmakerScraper {
       });
     });
 
-    this.matches = result;
-    await this.browser.close();
+    return result;
   }
 }

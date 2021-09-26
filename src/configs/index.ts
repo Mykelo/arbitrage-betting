@@ -11,3 +11,5 @@ export const LEAGUE_NAMES = <const>[
   'premierLeague',
   'jupilerPro',
 ];
+
+export * as leagueLinks from './bookmaker_links';

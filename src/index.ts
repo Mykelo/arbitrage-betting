@@ -1,11 +1,10 @@
 import { TeamComparator } from './comparators';
-import { LEAGUES } from './configs';
-import { BUNDESLIGA, JUPILER_PRO, PREMIER_LEAGUE } from './configs/leagues';
+import { LEAGUES, LEAGUE_NAMES } from './configs';
 import { findProfitableBets } from './find_bets';
 import { BetcrisScraper } from './scrapers/BetcrisScraper';
 import { BetfanScraper } from './scrapers/BetfanScraper';
 import { FortunaScraper } from './scrapers/FortunaScraper';
-import { BetGroup, ScraperConfig, SportEvent, Team } from './types';
+import { BetGroup, League, ScraperConfig, SportEvent, Team } from './types';
 
 async function scrapeBetfan() {
   const betfanScraper = new BetfanScraper();
@@ -82,55 +81,80 @@ const scrapers: ScraperConfig[] = [
   },
 ];
 
-
-async function scrape(
-  scrapes: ScraperConfig[],
-): Promise<SportEvent[]> {
-  for (const scrape of scrapes) {
-    await scrape.scraper.scrapeMatches(scrape.url);
-  }
+function findSportEvents(scrapes: ScraperConfig[]): SportEvent[] {
+  const finalEvents: SportEvent[] = [];
   const masterScrape = scrapes[0];
   const otherScrapes = scrapes.slice(1);
-  const finalEvents: SportEvent[] = [];
-  const comparator = new TeamComparator(config);
 
-  for (const masterMatch of masterScrape.scraper.matches) {
-    const identifiedTeam1 = comparator.find(masterMatch.teams[0]);
-    const identifiedTeam2 = comparator.find(masterMatch.teams[1]);
+  for (const league of LEAGUE_NAMES) {
+    const comparator = new TeamComparator(LEAGUES[league]);
 
-    if (!identifiedTeam1 || !identifiedTeam2) continue;
+    const masterScrapeLeague = masterScrape.leagues.find(
+      l => l.name === league
+    );
+    if (!masterScrapeLeague || !masterScrapeLeague.matches) continue;
 
-    const sportEvent: SportEvent = {
-      teams: [identifiedTeam1, identifiedTeam2] as [Team, Team],
-      bookmakerEvents: [{ ...masterMatch, bookamerName: masterScrape.name }],
-    };
+    const otherScrapesLeague = otherScrapes
+      .map(other => other.leagues.find(l => l.name === league))
+      .filter(s => s === undefined) as League[];
 
-    for (const otherScrape of otherScrapes) {
-      for (const otherMatch of otherScrape.scraper.matches) {
-        const { teams } = otherMatch;
-        if (
-          comparator.compare(identifiedTeam1, teams[0]) &&
-          comparator.compare(identifiedTeam2, teams[1])
-        ) {
-          sportEvent.bookmakerEvents.push({
-            ...otherMatch,
-            bookamerName: otherScrape.name,
-          });
-          break;
+    for (const masterMatch of masterScrapeLeague.matches) {
+      const identifiedTeam1 = comparator.find(masterMatch.teams[0]);
+      const identifiedTeam2 = comparator.find(masterMatch.teams[1]);
+
+      if (!identifiedTeam1 || !identifiedTeam2) continue;
+
+      const sportEvent: SportEvent = {
+        teams: [identifiedTeam1, identifiedTeam2] as [Team, Team],
+        bookmakerEvents: [{ ...masterMatch, bookamerName: masterScrape.name }],
+      };
+
+      for (const otherScrape of otherScrapes) {
+        const otherScrapeLeague = otherScrape.leagues.find(
+          l => l.name === league
+        );
+        if (!otherScrapeLeague || !otherScrapeLeague.matches) continue;
+
+        for (const otherMatch of otherScrapeLeague.matches) {
+          const { teams } = otherMatch;
+          if (
+            comparator.compare(identifiedTeam1, teams[0]) &&
+            comparator.compare(identifiedTeam2, teams[1])
+          ) {
+            sportEvent.bookmakerEvents.push({
+              ...otherMatch,
+              bookamerName: otherScrape.name,
+            });
+            break;
+          }
         }
       }
+
+      finalEvents.push(sportEvent);
     }
-
-    finalEvents.push(sportEvent);
   }
-
   console.log(finalEvents);
   return finalEvents;
 }
 
-async function analyzeBets(scrapes: ScraperConfig[], config: Team[]) {
+async function scrape(scrapeConfig: ScraperConfig): Promise<ScraperConfig> {
+  const newScrape: ScraperConfig = { ...scrapeConfig };
+
+  for (const league of newScrape.leagues) {
+    await newScrape.scraper.scrapeMatches(league.url);
+    league.matches = newScrape.scraper.matches;
+  }
+
+  return newScrape;
+}
+
+async function analyzeBets(scrapers: ScraperConfig[]) {
   try {
-    const events = await scrapeFootballLeague(scrapes, config);
+    const usedScrapers: ScraperConfig[] = [];
+    for (const s of scrapers) {
+      usedScrapers.push(await scrape(s));
+    }
+    const events = await findSportEvents(usedScrapers);
     const bets = events.reduce<BetGroup[]>(
       (prev, curr) => prev.concat(findProfitableBets(curr)),
       []
@@ -146,4 +170,4 @@ async function analyzeBets(scrapes: ScraperConfig[], config: Team[]) {
 // analyzeBets(premierLeagueScrapes, PREMIER_LEAGUE);
 // analyzeBets(bundesligaScrapes, BUNDESLIGA);
 
-scrapeFortuna();
+analyzeBets(scrapers);

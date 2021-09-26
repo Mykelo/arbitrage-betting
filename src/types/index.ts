@@ -6,6 +6,13 @@ import {
 } from 'puppeteer';
 import { LEAGUES, LEAGUE_NAMES } from '../configs';
 
+export type LeagueName = typeof LEAGUE_NAMES[number];
+
+export interface League {
+  name: LeagueName;
+  url: string;
+  matches?: BookmakerEvent[];
+}
 export interface BookmakerScraperInterface {
   browser: Browser | null;
   matches: BookmakerEvent[];
@@ -32,11 +39,7 @@ export interface Team {
 export interface ScraperConfig {
   name: string;
   scraper: BookmakerScraperInterface;
-  leagues: {
-    name: typeof LEAGUE_NAMES[number];
-    url: string;
-    matches?: Team[];
-  }[];
+  leagues: League[];
 }
 
 export interface SportEvent {

@@ -16,7 +16,6 @@ export class BetfanScraper extends AbstractBookmakerScraper {
 
     const result: BookmakerEvent[] = await page.evaluate(() => {
       const events = Array.from(document.querySelectorAll('li.single-event'));
-      console.log(events);
       return events.map(event => {
         const dateString = event.getAttribute('event-date');
         const date = dateString ? new Date(dateString) : undefined;

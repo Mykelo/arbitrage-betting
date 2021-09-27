@@ -19,6 +19,7 @@ const scrapers: AbstractBookmakerScraper[] = [
 async function analyzeBets(scrapers: AbstractBookmakerScraper[]) {
   try {
     for (const s of scrapers) {
+      console.log('\n\n', s.name);
       await s.scrapeAllLeagues();
     }
     const events = await findSportEvents(scrapers);
@@ -27,7 +28,16 @@ async function analyzeBets(scrapers: AbstractBookmakerScraper[]) {
       []
     );
     // const bets = findProfitableBets(bundesligaEvents[0]);
-    console.log(bets);
+
+    console.log('\nProfitable bets:');
+    bets.forEach((bet, i) => {
+      console.log(`BET #${i + 1}`);
+      bet.bets.forEach(b => {
+        console.log(`${b.team} -> ${b.bookmaker} (${b.odd})`);
+      });
+      console.log();
+    });
+    console.log('Finished!');
   } catch (e) {
     console.log(e);
   }

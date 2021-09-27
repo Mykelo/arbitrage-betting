@@ -25,6 +25,10 @@ export const betfan: League[] = [
     name: 'laLiga',
     url: 'https://betfan.pl/zaklady-bukmacherskie/pilka-nozna/hiszpania/laliga/230',
   },
+  {
+    name: 'ekstraklasa',
+    url: 'https://betfan.pl/zaklady-bukmacherskie/pilka-nozna/polska/ekstraklasa/294',
+  },
 ];
 
 export const betcris: League[] = [
@@ -51,6 +55,10 @@ export const betcris: League[] = [
   {
     name: 'laLiga',
     url: 'https://www.betcris.pl/zaklady-bukmacherskie#/Soccer/Spain/545/18603730',
+  },
+  {
+    name: 'ekstraklasa',
+    url: 'https://www.betcris.pl/zaklady-bukmacherskie#/Soccer/Poland/1978/18603730',
   },
 ];
 
@@ -79,6 +87,10 @@ export const fortuna: League[] = [
     name: 'laLiga',
     url: 'https://www.efortuna.pl/zaklady-bukmacherskie/pilka-nozna/1-hiszpania',
   },
+  {
+    name: 'ekstraklasa',
+    url: 'https://www.efortuna.pl/zaklady-bukmacherskie/pilka-nozna/ekstraklasa-polska',
+  },
 ];
 
 export const fuksiarz: League[] = [
@@ -106,6 +118,10 @@ export const fuksiarz: League[] = [
     name: 'laLiga',
     url: 'https://fuksiarz.pl/zaklady-bukmacherskie/pilka-nozna/hiszpania/laliga/654/1',
   },
+  {
+    name: 'ekstraklasa',
+    url: 'https://fuksiarz.pl/zaklady-bukmacherskie/pilka-nozna/polska/ekstraklasa/265/1',
+  },
 ];
 
 export const betclic: League[] = [
@@ -132,5 +148,9 @@ export const betclic: League[] = [
   {
     name: 'laLiga',
     url: 'https://www.betclic.pl/pilka-nozna-s1/la-liga-c7',
+  },
+  {
+    name: 'ekstraklasa',
+    url: 'https://www.betclic.pl/pilka-nozna-s1/ekstraklasa-c221',
   },
 ];

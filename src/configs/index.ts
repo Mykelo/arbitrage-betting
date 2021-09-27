@@ -1,5 +1,6 @@
 import {
   BUNDESLIGA,
+  EKSTRAKLASA,
   JUPILER_PRO,
   LA_LIGA,
   LIGUE_1,
@@ -14,6 +15,7 @@ export const LEAGUES = <const>{
   ligue1: LIGUE_1,
   serieA: SERIE_A,
   laLiga: LA_LIGA,
+  ekstraklasa: EKSTRAKLASA,
 };
 
 export const LEAGUE_NAMES = <const>[
@@ -23,6 +25,7 @@ export const LEAGUE_NAMES = <const>[
   'ligue1',
   'serieA',
   'laLiga',
+  'ekstraklasa',
 ];
 
 export * as leagueLinks from './bookmaker_links';

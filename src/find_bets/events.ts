@@ -53,6 +53,5 @@ export function findSportEvents(
       finalEvents.push(sportEvent);
     }
   }
-  console.log(finalEvents);
   return finalEvents;
 }

@@ -181,3 +181,42 @@ export const LA_LIGA: Team[] = [
   { name: 'Valencia CF', keywords: ['valencia cf', 'valencia'] },
   { name: 'Villarreal CF', keywords: ['villarreal cf', 'villarreal'] },
 ];
+
+export const EKSTRAKLASA: Team[] = [
+  {
+    name: 'BRUK-BET TERMALICA NIECIECZA',
+    keywords: ['bruk-bet termalica nieciecza', 'termalica', 'nieciecza'],
+  },
+  { name: 'CRACOVIA', keywords: ['cracovia'] },
+  {
+    name: 'GÓRNIK ŁĘCZNA',
+    keywords: ['górnik łęczna', 'łęczna', ['górnik', 'ł']],
+  },
+  {
+    name: 'GÓRNIK ZABRZE',
+    keywords: ['górnik zabrze', 'zabrze', ['górnik', 'z']],
+  },
+  {
+    name: 'JAGIELLONIA BIAŁYSTOK',
+    keywords: ['jagiellonia białystok', 'jagiellonia', 'białystok'],
+  },
+  { name: 'KGHM ZAGŁĘBIE LUBIN', keywords: ['kghm zagłębie lubin', 'lubin'] },
+  { name: 'LECH POZNAŃ', keywords: ['lech poznań', 'poznań', ['lech', 'p']] },
+  { name: 'LECHIA GDAŃSK', keywords: ['lechia gdańsk', 'lechia', 'gdańsk'] },
+  { name: 'LEGIA WARSZAWA', keywords: ['legia warszawa', 'legia'] },
+  { name: 'PGE FKS STAL MIELEC', keywords: ['pge fks stal mielec', 'mielec'] },
+  { name: 'PIAST GLIWICE', keywords: ['piast gliwice', 'piast', 'gliwice'] },
+  { name: 'POGOŃ SZCZECIN', keywords: ['pogoń szczecin', 'pogoń', 'szczecin'] },
+  { name: 'RADOMIAK RADOM', keywords: ['radomiak radom', 'radom'] },
+  {
+    name: 'RAKÓW CZĘSTOCHOWA',
+    keywords: ['raków częstochowa', ['raków', 'cz'], 'częstochowa'],
+  },
+  { name: 'ŚLĄSK WROCŁAW', keywords: ['śląsk wrocław', 'śląsk', 'wrocław'] },
+  { name: 'WARTA POZNAŃ', keywords: ['warta poznań', 'warta'] },
+  {
+    name: 'WISŁA KRAKÓW',
+    keywords: ['wisła kraków', 'kraków', ['wisła', 'k.']],
+  },
+  { name: 'WISŁA PŁOCK', keywords: ['wisła płock', 'płock'] },
+];

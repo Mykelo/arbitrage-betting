@@ -17,6 +17,14 @@ export const betfan: League[] = [
     name: 'ligue1',
     url: 'https://betfan.pl/zaklady-bukmacherskie/pilka-nozna/francja/ligue-1/214',
   },
+  {
+    name: 'serieA',
+    url: 'https://betfan.pl/zaklady-bukmacherskie/pilka-nozna/wlochy/serie-a/218',
+  },
+  {
+    name: 'laLiga',
+    url: 'https://betfan.pl/zaklady-bukmacherskie/pilka-nozna/hiszpania/laliga/230',
+  },
 ];
 
 export const betcris: League[] = [
@@ -35,6 +43,14 @@ export const betcris: League[] = [
   {
     name: 'ligue1',
     url: 'https://www.betcris.pl/zaklady-bukmacherskie#/Soccer/France/548/18603730',
+  },
+  {
+    name: 'serieA',
+    url: 'https://www.betcris.pl/zaklady-bukmacherskie#/Soccer/Italy/543/18603730',
+  },
+  {
+    name: 'laLiga',
+    url: 'https://www.betcris.pl/zaklady-bukmacherskie#/Soccer/Spain/545/18603730',
   },
 ];
 
@@ -55,6 +71,14 @@ export const fortuna: League[] = [
     name: 'ligue1',
     url: 'https://www.efortuna.pl/zaklady-bukmacherskie/pilka-nozna/1-francja',
   },
+  {
+    name: 'serieA',
+    url: 'https://www.efortuna.pl/zaklady-bukmacherskie/pilka-nozna/1-wlochy',
+  },
+  {
+    name: 'laLiga',
+    url: 'https://www.efortuna.pl/zaklady-bukmacherskie/pilka-nozna/1-hiszpania',
+  },
 ];
 
 export const fuksiarz: League[] = [
@@ -74,6 +98,14 @@ export const fuksiarz: League[] = [
     name: 'ligue1',
     url: 'https://fuksiarz.pl/zaklady-bukmacherskie/pilka-nozna/francja/ligue-1/1152/1',
   },
+  {
+    name: 'serieA',
+    url: 'https://fuksiarz.pl/zaklady-bukmacherskie/pilka-nozna/wlochy/serie-a/648/1',
+  },
+  {
+    name: 'laLiga',
+    url: 'https://fuksiarz.pl/zaklady-bukmacherskie/pilka-nozna/hiszpania/laliga/654/1',
+  },
 ];
 
 export const betclic: League[] = [
@@ -92,5 +124,13 @@ export const betclic: League[] = [
   {
     name: 'ligue1',
     url: 'https://www.betclic.pl/pilka-nozna-s1/ligue-1-c4',
+  },
+  {
+    name: 'serieA',
+    url: 'https://www.betclic.pl/pilka-nozna-s1/serie-a-c6',
+  },
+  {
+    name: 'laLiga',
+    url: 'https://www.betclic.pl/pilka-nozna-s1/la-liga-c7',
   },
 ];

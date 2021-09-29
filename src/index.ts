@@ -31,9 +31,13 @@ async function analyzeBets(scrapers: AbstractBookmakerScraper[]) {
 
     console.log('\nProfitable bets:');
     bets.forEach((bet, i) => {
-      console.log(`BET #${i + 1}`);
+      console.log(`BET #${i + 1} (${bet.percentage.toFixed(2)}%)`);
       bet.bets.forEach(b => {
-        console.log(`${b.team} -> ${b.bookmaker} (${b.odd})`);
+        console.log(
+          `${b.team === 'draw' ? b.team : b.team.name} -> ${b.bookmaker} (${
+            b.odd
+          })`
+        );
       });
       console.log();
     });

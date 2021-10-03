@@ -33,6 +33,10 @@ export const betfan: League[] = [
     name: 'nos',
     url: 'https://betfan.pl/zaklady-bukmacherskie/pilka-nozna/portugalia/1-portugalia/302',
   },
+  {
+    name: 'eredivisie',
+    url: 'https://betfan.pl/zaklady-bukmacherskie/pilka-nozna/holandia/1-holandia/252',
+  },
 ];
 
 export const betcris: League[] = [
@@ -67,6 +71,10 @@ export const betcris: League[] = [
   {
     name: 'nos',
     url: 'https://www.betcris.pl/zaklady-bukmacherskie#/Soccer/Portugal/560/18669579',
+  },
+  {
+    name: 'eredivisie',
+    url: 'https://www.betcris.pl/zaklady-bukmacherskie#/Soccer/Netherlands/1957/18669579',
   },
 ];
 
@@ -103,6 +111,10 @@ export const fortuna: League[] = [
     name: 'nos',
     url: 'https://www.efortuna.pl/zaklady-bukmacherskie/pilka-nozna/1-portugalia',
   },
+  {
+    name: 'eredivisie',
+    url: 'https://www.efortuna.pl/zaklady-bukmacherskie/pilka-nozna/1-holandia',
+  },
 ];
 
 export const fuksiarz: League[] = [
@@ -138,6 +150,10 @@ export const fuksiarz: League[] = [
     name: 'nos',
     url: 'https://fuksiarz.pl/zaklady-bukmacherskie/pilka-nozna/portugalia/1-liga/549/1',
   },
+  {
+    name: 'eredivisie',
+    url: 'https://fuksiarz.pl/zaklady-bukmacherskie/pilka-nozna/holandia/1-liga/1932/1',
+  },
 ];
 
 export const betclic: League[] = [
@@ -172,5 +188,9 @@ export const betclic: League[] = [
   {
     name: 'nos',
     url: 'https://www.betclic.pl/pilka-nozna-s1/portugalia-primeira-liga-c32',
+  },
+  {
+    name: 'eredivisie',
+    url: 'https://www.betclic.pl/pilka-nozna-s1/holandia-eredivisie-c21',
   },
 ];

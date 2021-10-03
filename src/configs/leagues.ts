@@ -241,3 +241,33 @@ export const NOS: Team[] = [
   { name: 'Sporting CP', keywords: ['sporting'] },
   { name: 'Vitória SC', keywords: ['vitória', 'vitoria'] },
 ];
+
+export const EREDIVISE: Team[] = [
+  { name: 'AJAX', keywords: ['ajax'] },
+  { name: 'AZ', keywords: ['az'] },
+  { name: 'FC GRONINGEN', keywords: ['groningen'] },
+  { name: 'FC TWENTE', keywords: ['twente'] },
+  { name: 'FC UTRECHT', keywords: ['utrecht'] },
+  { name: 'FEYENOORD', keywords: ['feyenoord'] },
+  {
+    name: 'FORTUNA SITTARD',
+    keywords: ['fortuna sittard', 'fortuna', 'sittard'],
+  },
+  { name: 'GO AHEAD EAGLES', keywords: ['go ahead eagles', 'eagles', 'ahead'] },
+  {
+    name: 'HERACLES ALMELO',
+    keywords: ['heracles almelo', 'heracles', 'almelo'],
+  },
+  { name: 'N.E.C. NIJMEGEN', keywords: ['nijmegen'] },
+  { name: 'PEC ZWOLLE', keywords: ['pec zwolle'] },
+  { name: 'PSV', keywords: ['psv'] },
+  { name: 'RKC WAALWIJK', keywords: ['waalwijk'] },
+  { name: 'SC CAMBUUR', keywords: ['cambuur'] },
+  { name: 'SC HEERENVEEN', keywords: ['heerenveen'] },
+  {
+    name: 'SPARTA ROTTERDAM',
+    keywords: ['sparta rotterdam', 'rotterdam', 'sparta'],
+  },
+  { name: 'VITESSE', keywords: ['vitesse'] },
+  { name: 'WILLEM II', keywords: ['willem ii', 'willem'] },
+];

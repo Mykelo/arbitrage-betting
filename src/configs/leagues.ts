@@ -220,3 +220,24 @@ export const EKSTRAKLASA: Team[] = [
   },
   { name: 'WISŁA PŁOCK', keywords: ['wisła płock', 'płock'] },
 ];
+
+export const NOS: Team[] = [
+  { name: 'Boavista FC', keywords: ['boavista'] },
+  { name: 'CD Tondela', keywords: ['tondela'] },
+  { name: 'Estoril Praia', keywords: ['estoril praia', 'praia', 'estoril'] },
+  { name: 'FC Arouca', keywords: ['arouca'] },
+  { name: 'FC Famalicão', keywords: ['famalicão', 'famalicao'] },
+  { name: 'FC P.Ferreira', keywords: ['ferreira'] },
+  { name: 'FC Vizela', keywords: ['vizela'] },
+  { name: 'FC Porto', keywords: ['porto'] },
+  { name: 'Gil Vicente FC', keywords: ['gil vicente', 'gil', 'vicente'] },
+  { name: 'Marítimo M.', keywords: ['marítimo', 'maritimo'] },
+  { name: 'Moreirense FC', keywords: ['moreirense'] },
+  { name: 'Belenenses SAD', keywords: ['belenenses sad', 'belenenses', 'sad'] },
+  { name: 'Portimonense', keywords: ['portimonense'] },
+  { name: 'Santa Clara', keywords: ['santa clara', 'santa', 'clara'] },
+  { name: 'SL Benfica', keywords: ['benfica'] },
+  { name: 'SC Braga', keywords: ['braga'] },
+  { name: 'Sporting CP', keywords: ['sporting'] },
+  { name: 'Vitória SC', keywords: ['vitória', 'vitoria'] },
+];

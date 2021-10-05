@@ -3,6 +3,7 @@ import {
   CHAMPIONS_LEAGUE,
   EKSTRAKLASA,
   EREDIVISE,
+  EUROPA_LEAGUE,
   JUPILER_PRO,
   LA_LIGA,
   LIGUE_1,
@@ -22,6 +23,7 @@ export const LEAGUES = <const>{
   nos: NOS,
   eredivisie: EREDIVISE,
   ucl: CHAMPIONS_LEAGUE,
+  uel: EUROPA_LEAGUE,
 };
 
 export const LEAGUE_NAMES = <const>[
@@ -35,6 +37,7 @@ export const LEAGUE_NAMES = <const>[
   'nos',
   'eredivisie',
   'ucl',
+  'uel',
 ];
 
 export * as leagueLinks from './bookmaker_links';

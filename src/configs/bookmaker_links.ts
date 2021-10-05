@@ -41,6 +41,10 @@ export const betfan: League[] = [
     name: 'ucl',
     url: 'https://betfan.pl/zaklady-bukmacherskie/pilka-nozna/klubowe/liga-mistrzow/276',
   },
+  {
+    name: 'uel',
+    url: 'https://betfan.pl/zaklady-bukmacherskie/pilka-nozna/klubowe/liga-europy/235',
+  },
 ];
 
 export const betcris: League[] = [
@@ -83,6 +87,10 @@ export const betcris: League[] = [
   {
     name: 'ucl',
     url: 'https://www.betcris.pl/zaklady-bukmacherskie#/Soccer/Europe/566/18669579',
+  },
+  {
+    name: 'uel',
+    url: 'https://www.betcris.pl/zaklady-bukmacherskie#/Soccer/Europe/1861/18702289',
   },
 ];
 
@@ -127,6 +135,10 @@ export const fortuna: League[] = [
     name: 'ucl',
     url: 'https://www.efortuna.pl/zaklady-bukmacherskie/pilka-nozna/liga-mistrzow',
   },
+  {
+    name: 'uel',
+    url: 'https://www.efortuna.pl/zaklady-bukmacherskie/pilka-nozna/liga-europy',
+  },
 ];
 
 export const fuksiarz: League[] = [
@@ -170,6 +182,10 @@ export const fuksiarz: League[] = [
     name: 'ucl',
     url: 'https://fuksiarz.pl/zaklady-bukmacherskie/pilka-nozna/klubowe/liga-mistrzow/1109/1',
   },
+  {
+    name: 'uel',
+    url: 'https://fuksiarz.pl/zaklady-bukmacherskie/pilka-nozna/klubowe/liga-europy/1107/1',
+  },
 ];
 
 export const betclic: League[] = [
@@ -212,5 +228,9 @@ export const betclic: League[] = [
   {
     name: 'ucl',
     url: 'https://www.betclic.pl/pilka-nozna-s1/liga-mistrzow-c8',
+  },
+  {
+    name: 'uel',
+    url: 'https://www.betclic.pl/pilka-nozna-s1/liga-europy-c3453',
   },
 ];

@@ -24,7 +24,7 @@ export abstract class AbstractBookmakerScraper
     await this.launch();
 
     for (const league of this.leagues) {
-      console.log('Scrapping ', league.name);
+      console.log('Scraping ', league.name);
       const events = await this.scrapeMatches(league.url);
       league.matches = events;
     }
